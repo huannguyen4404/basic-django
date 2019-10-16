@@ -9,3 +9,8 @@ def index(request):
     # return response
 def contact(request):
     return render(request, 'pages/contact.html')
+    
+def error404(request, exception):
+    return render(request, 'pages/error.html')
+def error500(request):
+    return render(request, 'pages/error.html')
