@@ -7,4 +7,19 @@
     <h6>on {{post.date}}</h6>
     <img src="{{post.image.url}}" width="200px" />
     {{post.body|safe|linebreaks}}
+
+    {% for comment in post.comments.all %}
+        <h4><strong>{{comment.author}}</strong></h4>
+        <h6>{{comment.date}}</h6>
+        <p>{{comment.body|linebreaks}}</p>
+    {% endfor %}
+    {% if user.username %}
+        <form action="{% url 'post_detail' post.id %}" method="POST">
+            {% csrf_token %}
+            <p><label>Comment:</label></p>
+            {{form.body}}
+            <br>
+            <input type="submit" value="Post comment" />
+        </form>
+    {% endif %}
 {% endblock  %}
