@@ -1,3 +1,9 @@
-# Django-HowKteam.com
+# Django-Quickstart
+## References
+- VSCode Django tutorial: https://code.visualstudio.com/docs/python/tutorial-django
 
-https://www.youtube.com/playlist?list=PL33lvabfss1z8GYxjyMulCnhcYGk5ah8P
+## Install
+- python3 -m venv env
+- pip install -r requirements.txt
+- python manage.py migrate
+- python manage.py runserver
